@@ -22,6 +22,6 @@ class HomeController: UITabBarController {
         
         tabBar.barStyle = .black
         
-        self.selectedIndex = 4
+//        self.selectedIndex = 4
     }
 }

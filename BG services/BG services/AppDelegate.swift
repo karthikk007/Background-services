@@ -14,6 +14,8 @@ import SafariServices
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    var shortcutItem: UIApplicationShortcutItem?
+    
     //
     // MARK: - Variables And Properties
     //
@@ -61,7 +63,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      completionHandler: @escaping () -> Void) {
         backgroundSessionCompletionHandler = completionHandler
     }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        guard let shortcutItem = self.shortcutItem else { return }
+        
+        _ = handleShortcutItem(shortcutItem: shortcutItem)
+        
+        self.shortcutItem = nil
+    }
 }
+
+//MARK: handle shortcut
+extension AppDelegate {
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        completionHandler(handleShortcutItem(shortcutItem: shortcutItem))
+    }
+    
+    func handleShortcutItem(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        
+        var shortcutIdentified = false
+        
+        guard let type = shortcutItem.type.components(separatedBy: ".").last else {
+            return shortcutIdentified
+        }
+        
+        let application = UIApplication.shared
+        if let tabBarController = application.keyWindow?.rootViewController as? UITabBarController,
+            let shortcutType = ShortcutType(rawValue: type) {
+            tabBarController.selectedIndex = shortcutType.selectedIndex
+            shortcutIdentified = true
+        }
+        
+        return shortcutIdentified
+    }
+}
+
 
 //MARK: background fetch
 extension AppDelegate {
@@ -172,4 +208,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         print("willPresent notification")
         completionHandler(.alert)
     }
+    
+    
 }

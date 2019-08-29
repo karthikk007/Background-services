@@ -28,7 +28,9 @@ class BackgroundTaskHandler: Backgrounder {
     
     func endBackgroundTask() {
         print("background task ended.")
-        UIApplication.shared.endBackgroundTask(backgroundTask)
-        backgroundTask = .invalid
+        if backgroundTask != .invalid {
+            UIApplication.shared.endBackgroundTask(backgroundTask)
+            backgroundTask = .invalid
+        }
     }
 }

@@ -32,6 +32,7 @@
 		253599D022F978780094CD7C /* FeelinGood.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 253599CD22F978780094CD7C /* FeelinGood.mp3 */; };
 		253599D122F978780094CD7C /* IronBacon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 253599CE22F978780094CD7C /* IronBacon.mp3 */; };
 		253599D622F98A940094CD7C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253599D522F98A940094CD7C /* AudioToolbox.framework */; };
+		2553F2B82317D26800560313 /* ShortcutTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2553F2B72317D26800560313 /* ShortcutTypes.swift */; };
 		25F8C95722FB21AA00E4A65E /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8C95622FB21AA00E4A65E /* DownloadViewController.swift */; };
 		25F8C95C22FB42C300E4A65E /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8C95B22FB42C300E4A65E /* TrackCell.swift */; };
 		25F8C95E22FB435A00E4A65E /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8C95D22FB435A00E4A65E /* BaseCell.swift */; };
@@ -75,6 +76,7 @@
 		253599CE22F978780094CD7C /* IronBacon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = IronBacon.mp3; sourceTree = "<group>"; };
 		253599D322F98A940094CD7C /* BG services.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BG services.entitlements"; sourceTree = "<group>"; };
 		253599D522F98A940094CD7C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		2553F2B72317D26800560313 /* ShortcutTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutTypes.swift; sourceTree = "<group>"; };
 		25F8C95622FB21AA00E4A65E /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
 		25F8C95B22FB42C300E4A65E /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		25F8C95D22FB435A00E4A65E /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				251A81C1230C20D6002235DF /* Constants.swift */,
+				2553F2B72317D26800560313 /* ShortcutTypes.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				251A81C6230C2868002235DF /* UIColor.swift in Sources */,
 				253599C822F972EA0094CD7C /* TaskViewController.swift in Sources */,
 				25F8C96F22FC808800E4A65E /* DownloadService.swift in Sources */,
+				2553F2B82317D26800560313 /* ShortcutTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

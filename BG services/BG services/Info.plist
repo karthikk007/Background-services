@@ -45,6 +45,49 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).audio</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Audio</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>music</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).map</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Map</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>map</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).whatever</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>What Ever</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>fib</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).fetch</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Background Fetch</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>fetch</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).download</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Download and Play</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypePause</string>
+		</dict>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>

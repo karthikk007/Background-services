@@ -12,6 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    var shortcutItem: UIApplicationShortcutItem?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -20,6 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else {
             return
+        }
+        
+        if let shortcutItem = connectionOptions.shortcutItem {
+            self.shortcutItem = shortcutItem
         }
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
@@ -56,8 +61,37 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
+}
 
-
+//MARK: handle shortcut
+extension SceneDelegate {
+    
+    func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        completionHandler(handleShortcutItem(shortcutItem: shortcutItem))
+    }
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        completionHandler(handleShortcutItem(shortcutItem: shortcutItem))
+    }
+    
+    func handleShortcutItem(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        
+        var shortcutIdentified = false
+        
+        guard let type = shortcutItem.type.components(separatedBy: ".").last else {
+            return shortcutIdentified
+        }
+        
+        let application = UIApplication.shared
+        if let tabBarController = application.keyWindow?.rootViewController as? UITabBarController,
+            let shortcutType = ShortcutType(rawValue: type) {
+            tabBarController.selectedIndex = shortcutType.selectedIndex
+            shortcutIdentified = true
+        }
+        
+        return shortcutIdentified
+    }
+    
 }
 
 extension SceneDelegate {
